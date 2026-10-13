@@ -8,7 +8,7 @@ class TaskStatusTests(SimpleTestCase):
     def test_incomplete_task_is_pending(self):
         self.assertEqual(
             get_task_status(False),
-            "finished"
+            "pending"
         )
 
     def test_completed_task_is_completed(self):
