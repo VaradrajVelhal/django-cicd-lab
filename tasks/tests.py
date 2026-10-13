@@ -1,9 +1,18 @@
-# from django.test import SimpleTestCase
+
+from django.test import SimpleTestCase
 from .utils import get_task_status
 
 
-def test_incomplete_task_is_pending(self):
-    self.assertEqual(
-        get_task_status(False),
-        "finished"
-    )
+class TaskStatusTests(SimpleTestCase):
+
+    def test_incomplete_task_is_pending(self):
+        self.assertEqual(
+            get_task_status(False),
+            "finished"
+        )
+
+    def test_completed_task_is_completed(self):
+        self.assertEqual(
+            get_task_status(True),
+            "completed"
+        )
